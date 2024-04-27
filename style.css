@@ -1,0 +1,95 @@
+/* Fonte Poppins para todo o site */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+header {
+    position: absolute; /* Para sobreposição */
+    top: 0;
+    right: 0; /* Alinhamento à direita */
+    z-index: 10; /* Para ficar acima da seção de destaque */
+    color: #4CAF50; /* Cor esverdeada para o cabeçalho */
+    padding: 10px; /* Espaçamento interno */
+    margin: 20px 40px; /* Margem externa de 40 px */
+}
+
+nav ul {
+    list-style: none; /* Sem marcadores de lista */
+    padding: 0; /* Sem espaçamentos desnecessários */
+    display: flex;
+    justify-content: flex-end; /* Alinhamento à direita */
+}
+
+nav ul li {
+    margin-right: 15px; /* Espaçamento entre itens */
+}
+
+nav ul li a {
+    font-weight: 600; /* Fonte Poppins peso 600 */
+    color: white; /* Contraste para o fundo esverdeado */
+    padding: 10px;
+    text-decoration: none; /* Sem sublinhado */
+}
+
+nav ul li a:hover {
+    color: lightgray; /* Mudança de cor ao passar o mouse */
+}
+
+/* Seção de Destaque (Hero Section) sem sobreposição escura */
+#inicio {
+    background-image: url('imgs/florestas.png'); /* Imagem da floresta desmatada */
+    background-size: cover; /* Cobrir todo o fundo */
+    background-position: center; /* Centralizar a imagem */
+    color: white; /* Contraste para o texto */
+    text-align: center; /* Alinhamento centralizado */
+    height: 100vh; /* Para cobrir toda a primeira dobra */
+    padding-top: 60px; /* Para o cabeçalho */
+    position: relative; /* Para sobreposição */
+}
+
+#inicio h1 {
+    font-size: 48px; /* Tamanho maior para destaque */
+    font-weight: bold; /* Negrito */
+    text-shadow: 2px 2px 8px #000; /* Sombra para destaque */
+}
+
+#inicio p {
+    font-size: 20px; /* Tamanho do texto */
+    text-shadow: 1px 1px 4px #000; /* Para melhor contraste */
+}
+
+#inicio button {
+    width: 160px;
+    height: 45px;
+    border-radius: 30px; /* Bordas arredondadas */
+}
+
+/* Seções do Site */
+section {
+    padding: 40px; /* Espaçamento para cada seção */
+    margin-bottom: 20px; /* Espaçamento entre seções */
+}
+
+h2 {
+    color: #004d40; /* Cor para os títulos */
+    text-align: center; /* Alinhamento centralizado */
+    font-size: 24px; /* Tamanho do título */
+}
+
+/* Estilos para o Rodapé */
+footer {
+    background-color: white; /* Fundo neutro */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Espaçamento no rodapé */
+}
+
+footer a {
+    color: #333; /* Cor dos links no rodapé */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}

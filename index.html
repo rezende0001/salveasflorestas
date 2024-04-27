@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Salve as Florestas</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS -->
+    <script src="calculadora.js"></script> <!-- Adiciona o arquivo JavaScript ao HTML -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Fonte Poppins -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para responsividade -->
+</head>
+<body>
+    <!-- Cabeçalho sem fundo e alinhado à direita -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre-nos">Calculadora de Energia Solar</a></li>
+                    <li><a href="#contato">Perguntas Frequentes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção de Destaque (Hero) sem escurecimento -->
+    <section id="inicio">
+        <div style="padding: 60px; text-align: center;">
+            <h1>Salve as Florestas</h1>
+            <p>Isso acontece quando você utiliza a energia da rua.</p>
+            <button onclick="window.location.href='#sobre-nos'">Saiba Mais</button>
+        </div>
+    </section>
+
+    <!-- Seção sobre "Você usando energia da rua, quais os malefícios?" -->
+    <section id="energia-da-rua">
+        <div class="container">
+            <h2>Você usando energia da rua, quais os malefícios?</h2>
+            <p>Explique os impactos ambientais e sociais do uso de energia não renovável da rede elétrica convencional.</p>
+        </div>
+    </section>
+
+    <!-- Seção sobre "Você usando energia solar, quais os benefícios?" -->
+    <section id="energia-solar">
+        <div class="container">
+            <h2>Você usando energia solar, quais os benefícios?</h2>
+            <p>Descreva as vantagens da energia solar, como sustentabilidade, economia e redução da pegada de carbono.</p>
+        </div>
+    </section>
+
+        <!-- Seção da Calculadora de Energia Solar -->
+    <section id="calculadora" style="text-align: center; padding: 60px;">
+        <h2>Calculadora de Energia Solar</h2>
+        <form id="form-calculadora">
+            <label for="localizacao">Localização (Cidade/Estado):</label>
+            <input type="text" id="localizacao" name="localizacao" placeholder="Digite sua localização">
+            <br><br>
+
+            <label for="consumo">Consumo Médio Mensal (kWh):</label>
+            <input type="number" id="consumo" name="consumo" placeholder="Digite seu consumo médio mensal">
+            <br><br>
+
+            <label for="custo-kwh">Custo por kWh:</label>
+            <input type="number" id="custo-kwh" name="custo-kwh" placeholder="Digite o custo por kWh">
+            <br><br>
+
+            <label for="horas-sol">Horas de Sol Diárias:</label>
+            <input type="number" id="horas-sol" name="horas-sol" placeholder="Digite a média de horas de sol por dia">
+            <br><br>
+
+            <button type="button" onclick="calcular()">Calcular</button> <!-- Chama a função calcular -->
+        </form>
+
+        <!-- Área para exibir os resultados -->
+        <div id="resultado" style="padding-top: 20px;"></div>
+    </section>
+
+
+
+    <!-- Seção de Perguntas Frequentes -->
+    <section id="perguntas-frequentes">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <ul>
+                <li>Como posso contribuir para a conservação florestal?</li>
+                <li>Quais são os benefícios da energia solar?</li>
+                <li>Como funciona a calculadora de conservação?</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Para mais informações ou suporte, entre em contato conosco:</p>
+            <ul>
+                <li>Email: contato@salveasflorestas.com</li>
+                <li>Telefone: (XX) XXXX-XXXX</li>
+                <li>Redes Sociais:
+                    <ul>
+                        <li><a href="https://facebook.com">Facebook</a></li>
+                        <li><a href="https://twitter.com">Twitter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Salve as Florestas. Todos os direitos reservados.</p>
+            <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+        </div>
+    </footer>
+</body>
