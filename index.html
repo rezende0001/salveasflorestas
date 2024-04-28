@@ -4,70 +4,63 @@
     <meta charset="UTF-8">
     <title>Salve as Florestas</title>
     <link rel="stylesheet" href="style.css"> <!-- Link para o CSS -->
-    <script src="calculadora.js"></script> <!-- Adiciona o arquivo JavaScript ao HTML -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery via CDN -->
+    <script type="module" src="calculadora.js"></script> <!-- Adiciona o arquivo JavaScript ao HTML -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Fonte Poppins -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para responsividade -->
 </head>
 <body>
-    <!-- Cabeçalho sem fundo e alinhado à direita -->
-    <header>
+    <!-- Cabeçalho alinhado ao centro -->
+    <header style="text-align: center;">
         <div class="container">
             <nav>
-                <ul>
+                <ul style="display: flex; justify-content: center;">
                     <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre-nos">Calculadora de Energia Solar</a></li>
-                    <li><a href="#contato">Perguntas Frequentes</a></li>
+                    <li><a href="#calculadora">Calculadora de Energia Solar</a></li>
+                    <li><a href="#perguntas-frequentes">Perguntas Frequentes</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Seção de Destaque (Hero) sem escurecimento -->
+    <!-- Seção de Destaque -->
     <section id="inicio">
-        <div style="padding: 60px; text-align: center;">
+        <div class="textos"> <!-- Div para textos alinhados à esquerda -->
             <h1>Salve as Florestas</h1>
             <p>Isso acontece quando você utiliza a energia da rua.</p>
-            <button onclick="window.location.href='#sobre-nos'">Saiba Mais</button>
+            <button class="botao-direito" onclick="window.location.href='#calculadora'">Faça sua parte</button> <!-- Botão no canto inferior direito -->
         </div>
+    
     </section>
 
-    <!-- Seção sobre "Você usando energia da rua, quais os malefícios?" -->
-    <section id="energia-da-rua">
-        <div class="container">
-            <h2>Você usando energia da rua, quais os malefícios?</h2>
-            <p>Explique os impactos ambientais e sociais do uso de energia não renovável da rede elétrica convencional.</p>
-        </div>
-    </section>
-
-    <!-- Seção sobre "Você usando energia solar, quais os benefícios?" -->
-    <section id="energia-solar">
-        <div class="container">
-            <h2>Você usando energia solar, quais os benefícios?</h2>
-            <p>Descreva as vantagens da energia solar, como sustentabilidade, economia e redução da pegada de carbono.</p>
-        </div>
-    </section>
-
-        <!-- Seção da Calculadora de Energia Solar -->
+    <!-- Seção da Calculadora de Energia Solar -->
     <section id="calculadora" style="text-align: center; padding: 60px;">
         <h2>Calculadora de Energia Solar</h2>
-        <form id="form-calculadora">
-            <label for="localizacao">Localização (Cidade/Estado):</label>
-            <input type="text" id="localizacao" name="localizacao" placeholder="Digite sua localização">
-            <br><br>
+        <form id="form-calculadora" style="max-width: 400px; margin: auto; text-align: center;"> <!-- Centralizar a seção -->
+            <!-- Bloco para a localização -->
+            <div class="form-group" style="margin-bottom: 20px;"> <!-- Espaçamento entre campos -->
+                <label for="localizacao">Cidade (Apenas SP):</label> <!-- Pergunta -->
+                <select id="localizacao" name="localizacao" style="width: 80%;"> <!-- Campo de resposta com largura reduzida -->
+                    <option value="">Selecione uma cidade</option>
+                    <option value="São Paulo">São Paulo</option>
+                    <option value="Guarulhos">Guarulhos</option>
+                </select>
+            </div>
 
-            <label for="consumo">Consumo Médio Mensal (kWh):</label>
-            <input type="number" id="consumo" name="consumo" placeholder="Digite seu consumo médio mensal">
-            <br><br>
+            <!-- Bloco para o consumo médio mensal -->
+            <div class="form-group" style="margin-bottom: 20px;"> <!-- Espaçamento consistente -->
+                <label for="consumoMedioMensal">Consumo Médio Mensal (kWh):</label> <!-- Pergunta -->
+                <input type="number" id="consumoMedioMensal" placeholder="Digite seu consumo médio mensal" style="width: 80%;"> <!-- Campo de resposta com largura reduzida -->
+            </div>
 
-            <label for="custo-kwh">Custo por kWh:</label>
-            <input type="number" id="custo-kwh" name="custo-kwh" placeholder="Digite o custo por kWh">
-            <br><br>
+            <!-- Bloco para o custo por kWh -->
+            <div class="form-group" style="margin-bottom: 20px;"> <!-- Consistência no espaçamento -->
+                <label for="custo-kwh">Custo por kWh:</label> <!-- Pergunta -->
+                <input type="number" id="custo-kwh" placeholder="Digite o custo por kWh" style="width: 80%;"> <!-- Campo de resposta com largura reduzida -->
+            </div>
 
-            <label for="horas-sol">Horas de Sol Diárias:</label>
-            <input type="number" id="horas-sol" name="horas-sol" placeholder="Digite a média de horas de sol por dia">
-            <br><br>
-
-            <button type="button" onclick="calcular()">Calcular</button> <!-- Chama a função calcular -->
+            <!-- Botão para calcular -->
+            <button id="botao" type="button">Calcular</button> 
         </form>
 
         <!-- Área para exibir os resultados -->
@@ -75,34 +68,16 @@
     </section>
 
 
-
-    <!-- Seção de Perguntas Frequentes -->
+    <!-- Seção de Perguntas Frequentes com Acordeão -->
     <section id="perguntas-frequentes">
-        <div class="container">
+        <div class="container" style="text-align: center;">
             <h2>Perguntas Frequentes</h2>
-            <ul>
-                <li>Como posso contribuir para a conservação florestal?</li>
-                <li>Quais são os benefícios da energia solar?</li>
-                <li>Como funciona a calculadora de conservação?</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Seção de Contato -->
-    <section id="contato">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Para mais informações ou suporte, entre em contato conosco:</p>
-            <ul>
-                <li>Email: contato@salveasflorestas.com</li>
-                <li>Telefone: (XX) XXXX-XXXX</li>
-                <li>Redes Sociais:
-                    <ul>
-                        <li><a href="https://facebook.com">Facebook</a></li>
-                        <li><a href="https://twitter.com">Twitter</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="pergunta-frequente">Como posso contribuir para a conservação florestal?</div>
+            <div class="resposta">Você pode contribuir plantando árvores, reduzindo seu consumo de papel e apoiando organizações ambientais.</div>
+            <div class="pergunta-frequente">Quais são os benefícios da energia solar?</div>
+            <div class="resposta">A energia solar é limpa, renovável e pode reduzir suas contas de energia.</div>
+            <div class="pergunta-frequente">Como funciona a calculadora solar?</div>
+            <div class="resposta">A calculadora solar usa dados de consumo e irradiação solar para estimar o tamanho do sistema solar necessário.</div>
         </div>
     </section>
 
