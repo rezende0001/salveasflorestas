@@ -25,7 +25,7 @@
     <section id="inicio">
         <div class="textos">
             <h1>Salve as Florestas</h1>
-            <p>Isso acontece quando você utiliza a energia da rua.</p>
+            <p>Esse e o resultado do uso de energias não renovaveis: consequencia irreversiveis para nossos ecossistemas.</p>
             <button class="botao-direito" onclick="window.location.href='#calculadora'">Faça sua parte</button>
         </div>
     
@@ -38,7 +38,6 @@
                 <label for="localizacao">Cidade (Apenas SP):</label>
                 <select id="localizacao" name="localizacao" style="width: 80%;">
                     <option value="">Selecione uma cidade</option>
-                    <option value="São Paulo">São Paulo</option>
                     <option value="Guarulhos">Guarulhos</option>
                 </select>
             </div>
@@ -49,18 +48,17 @@
             </div>
 
             <div class="form-group" style="margin-bottom: 20px;">
-                <label for="custo-kwh">Custo por kWh:</label>
+                <label for="custo-kwh">Custo por kWh (R$):</label>
                 <input type="number" id="custo-kwh" placeholder="Digite o custo por kWh" style="width: 80%;">
             </div>
 
+
             <button id="botao" type="button">Calcular</button> 
         </form>
-
-        <div id="resultado" style="padding-top: 20px;"></div>
     </section>
 
 
-    <section id="perguntas-frequentes">
+<!--     <section id="perguntas-frequentes">
         <div class="container" style="text-align: center;">
             <h2>Perguntas Frequentes</h2>
             <div class="pergunta-frequente">Como posso contribuir para a conservação florestal?</div>
@@ -70,7 +68,7 @@
             <div class="pergunta-frequente">Como funciona a calculadora solar?</div>
             <div class="resposta">A calculadora solar usa dados de consumo e irradiação solar para estimar o tamanho do sistema solar necessário.</div>
         </div>
-    </section>
+    </section> -->
 
     <footer>
         <div class="container">
@@ -79,3 +77,44 @@
         </div>
     </footer>
 </body>
+<style>
+    #calculadora {
+    text-align: center;
+    padding: 60px;
+}
+
+#form-calculadora {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Garante que o label fique acima do input/select */
+}
+
+#localizacao, #consumoMedioMensal, #custo-kwh {
+    width: 80%;
+    padding: 8px; /* Adiciona um pouco de padding dentro dos inputs */
+    border: 1px solid #ccc; /* Bordas sutis para os inputs */
+    border-radius: 4px; /* Bordas arredondadas para os inputs */
+}
+
+#botao {
+    padding: 10px 80px; /* Padding mais generoso para um melhor clique */
+    background-color: white; /* Cor de fundo inicial branca */
+    border: 2px solid green; /* Bordas verdes conforme pedido */
+    border-radius: 10px; /* Bordas altamente arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para mudança de cor */
+}
+
+#botao:hover {
+    background-color: #e0ffe0; /* Muda para um verde claro ao passar o mouse */
+}
+</style>
+</html>

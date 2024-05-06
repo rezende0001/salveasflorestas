@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0px 50px;
 }
 
 .data-block {
@@ -28,3 +29,4 @@ body {
     font-size: 24px;
     margin-top: 5px;
 }
+

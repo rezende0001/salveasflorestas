@@ -109,12 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const energiaTotal = energiaGeradaArray.dados.reduce((total, mes) => total + mes, 0);
       
         const investimentoMedio = (qtd * 1700)
+
+        const valorkWhTotal = consumoMedioMensal * custoPorKWH
+        const payback = investimentoMedio / (valorkWhTotal + 20)
       
         const TONco2 = Number(((energiaTotal * 0.295)/1000).toFixed(1));
         const arvores = Math.round((TONco2) * 7.14451202);
 
         const areaInstalacao = Number((qtd * painel.areaInstalacao).toFixed(1));
-        const payback = 1
         const resultado = `
             <p>Potencia do sistema: ${potSistema} kWp</p>
             <p>Quantidade de Placas: ${qtd}</p>
@@ -128,10 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem("potencia", potSistema + " kWp");
         localStorage.setItem("quantidadePlacas", qtd);
-        localStorage.setItem("payback", payback + " Anos");
+        localStorage.setItem("payback", payback.toFixed(1) + " Meses");
         localStorage.setItem("investimentoMedio", investimentoMedio);
         localStorage.setItem("reducaoCO2", TONco2 + " Ton");
         localStorage.setItem("areaInstalacao", areaInstalacao + " m²");
+        localStorage.setItem("arvores", arvores);
 
         // Salvar outros dados...
 

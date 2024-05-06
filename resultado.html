@@ -9,29 +9,33 @@
 </head>
 <body>
     <div class="container">
-        <div class="data-block">
+        <!-- <div class="data-block">
             <span>Potência do Total Sistema</span>
             <strong id="potenciaSistema">2.31 kWp</strong>
-        </div>
+        </div> -->
         <div class="data-block">
             <span>Quantidade de Placas</span>
-            <strong id="quantidadePlacas">3281 kWh</strong>
+            <strong id="quantidadePlacas">13</strong>
         </div>
         <div class="data-block">
             <span>Área de Instalação</span>
             <strong id="areaInstalacao">14.9 m²</strong>
         </div>
-        <div class="data-block">
+        <!-- <div class="data-block">
             <span>Média Irradiação Anual</span>
             <strong>4951 W/m²</strong>
-        </div>
-        <div class="data-block">
+        </div> -->
+        <!-- <div class="data-block">
             <span>Temperatura Média Anual</span>
             <strong>18.8°C</strong>
-        </div>
+        </div> -->
         <div class="data-block">
             <span>Redução de CO2</span>
             <strong id="reducaoCO2">1 Ton</strong>
+        </div>
+        <div class="data-block">
+            <span>Árvores</span>
+            <strong id="arvores">50</strong>
         </div>
         <div class="data-block">
             <span>Tempo de retorno do Valor Investido (Payback)</span>
@@ -41,6 +45,36 @@
             <span>Investimento Medio</span>
             <strong id="investimentoMedio">300</strong>
         </div>
+
     </div>
+    <button onclick="window.history.back()" class="button">Voltar</button>
+
+    
+    
 </body>
+<style>
+.button {
+    padding: 10px 30px;
+    background-color: transparent; /* Fundo claro */
+    color: #fff; /* Texto em cinza para contraste */
+    border: 2px solid #4CAF50; /* Borda cinza */
+    border-radius: 20px; /* Cantos arredondados */
+    font-size: 16px;
+    cursor: pointer;
+    position: fixed; /* Posicionamento fixo na tela */
+    bottom: 50px; /* Distância de 20px do fundo da tela */
+    left: 50%; /* Centralizado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centralização exata */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Sombra suave para profundidade */
+    transition: background-color 0.3s ease;
+    outline: none; /* Remove o contorno ao focar */
+    width: 200px; /* Definir uma largura específica */
+    text-align: center; /* Garantir o alinhamento do texto no centro */
+}
+
+.button:hover {
+    background-color: #45a049; /* Um pouco mais escuro no hover */
+}
+
+</style>
 </html>
