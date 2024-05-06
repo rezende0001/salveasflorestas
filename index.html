@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Salve as Florestas</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery via CDN -->
-    <script type="module" src="calculadora.js"></script> <!-- Adiciona o arquivo JavaScript ao HTML -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Fonte Poppins -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para responsividade -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="calculadora.js"></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Cabeçalho alinhado ao centro -->
     <header style="text-align: center;">
         <div class="container">
             <nav>
@@ -23,52 +22,44 @@
         </div>
     </header>
 
-    <!-- Seção de Destaque -->
     <section id="inicio">
-        <div class="textos"> <!-- Div para textos alinhados à esquerda -->
+        <div class="textos">
             <h1>Salve as Florestas</h1>
             <p>Isso acontece quando você utiliza a energia da rua.</p>
-            <button class="botao-direito" onclick="window.location.href='#calculadora'">Faça sua parte</button> <!-- Botão no canto inferior direito -->
+            <button class="botao-direito" onclick="window.location.href='#calculadora'">Faça sua parte</button>
         </div>
     
     </section>
 
-    <!-- Seção da Calculadora de Energia Solar -->
     <section id="calculadora" style="text-align: center; padding: 60px;">
         <h2>Calculadora de Energia Solar</h2>
-        <form id="form-calculadora" style="max-width: 400px; margin: auto; text-align: center;"> <!-- Centralizar a seção -->
-            <!-- Bloco para a localização -->
-            <div class="form-group" style="margin-bottom: 20px;"> <!-- Espaçamento entre campos -->
-                <label for="localizacao">Cidade (Apenas SP):</label> <!-- Pergunta -->
-                <select id="localizacao" name="localizacao" style="width: 80%;"> <!-- Campo de resposta com largura reduzida -->
+        <form id="form-calculadora" style="max-width: 400px; margin: auto; text-align: center;">
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="localizacao">Cidade (Apenas SP):</label>
+                <select id="localizacao" name="localizacao" style="width: 80%;">
                     <option value="">Selecione uma cidade</option>
                     <option value="São Paulo">São Paulo</option>
                     <option value="Guarulhos">Guarulhos</option>
                 </select>
             </div>
 
-            <!-- Bloco para o consumo médio mensal -->
-            <div class="form-group" style="margin-bottom: 20px;"> <!-- Espaçamento consistente -->
-                <label for="consumoMedioMensal">Consumo Médio Mensal (kWh):</label> <!-- Pergunta -->
-                <input type="number" id="consumoMedioMensal" placeholder="Digite seu consumo médio mensal" style="width: 80%;"> <!-- Campo de resposta com largura reduzida -->
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="consumoMedioMensal">Consumo Médio Mensal (kWh):</label>
+                <input type="number" id="consumoMedioMensal" placeholder="Digite seu consumo médio mensal" style="width: 80%;">
             </div>
 
-            <!-- Bloco para o custo por kWh -->
-            <div class="form-group" style="margin-bottom: 20px;"> <!-- Consistência no espaçamento -->
-                <label for="custo-kwh">Custo por kWh:</label> <!-- Pergunta -->
-                <input type="number" id="custo-kwh" placeholder="Digite o custo por kWh" style="width: 80%;"> <!-- Campo de resposta com largura reduzida -->
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="custo-kwh">Custo por kWh:</label>
+                <input type="number" id="custo-kwh" placeholder="Digite o custo por kWh" style="width: 80%;">
             </div>
 
-            <!-- Botão para calcular -->
             <button id="botao" type="button">Calcular</button> 
         </form>
 
-        <!-- Área para exibir os resultados -->
         <div id="resultado" style="padding-top: 20px;"></div>
     </section>
 
 
-    <!-- Seção de Perguntas Frequentes com Acordeão -->
     <section id="perguntas-frequentes">
         <div class="container" style="text-align: center;">
             <h2>Perguntas Frequentes</h2>
@@ -81,7 +72,6 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
     <footer>
         <div class="container">
             <p>&copy; 2024 Salve as Florestas. Todos os direitos reservados.</p>

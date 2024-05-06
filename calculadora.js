@@ -12,16 +12,16 @@ const painel = paineis[1]
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll(".pergunta-frequente").forEach(pergunta => {
         pergunta.addEventListener("click", () => {
-            let resposta = pergunta.nextElementSibling; // Pega o próximo elemento que é a resposta
-            if (resposta && resposta.classList.contains("resposta")) { // Verifica se é uma resposta
+            let resposta = pergunta.nextElementSibling;
+            if (resposta && resposta.classList.contains("resposta")) { 
                 if (resposta.style.display === "none" || resposta.style.display === "") {
-                    resposta.style.display = "block"; // Mostra a resposta
+                    resposta.style.display = "block";
                 } else {
-                    resposta.style.display = "none"; // Oculta a resposta
+                    resposta.style.display = "none";
                 }
-                pergunta.classList.toggle("aberta"); // Alterna a seta para cima/baixo
+                pergunta.classList.toggle("aberta");
             } else {
-                console.error("Elemento resposta não encontrado."); // Mensagem de erro para depuração
+                console.error("Elemento resposta não encontrado.");
             }
         });
     });
@@ -51,24 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const consumoMedioMensal = parseFloat(document.getElementById("consumoMedioMensal").value);
         const custoPorKWH = parseFloat(document.getElementById("custo-kwh").value);
         const cidade = document.getElementById("localizacao").value;
-        
-        // Exibir os resultados
+   
         let irradiacaoSolarMediaDiaria = 0
         await fetch('radiacaoMedia.json')
         .then(response => {
             if (!response.ok) {
               throw new Error('Erro ao carregar o arquivo');
             }
-            return response.json(); // Converter para JSON
+            return response.json();
           })
         .then(data => {
             console.log(data)
             if (data[cidade]) {
-                // Defina o resultado para a irradiação solar média da cidade
+                
                 irradiacaoSolarMediaDiaria = data[cidade].mediaIrradiacaoSolar;
                 mediaTemperaturaAnual = data[cidade].mediaTemperaturaAnual;
               } else {
-                // Cidade não encontrada
+               
                 document.getElementById("resultado").innerHTML = "Cidade não encontrada";
               }
         })
@@ -79,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const potCorrigida = painel.calcularPotenciaCorrigida(18.8);
         const potSaidaInversor = painel.calculaPotSaidaInversor(potCorrigida, rendimentoInversor, 1);
         const energiaGerada = painel.calculoEnergiaGeradaMensal(30,mediaIrradiacaoAnual/ 1000, 0.98, Number(potSaidaInversor));
-        console.log(energiaGerada) // saida: 0.035 ERRADO 
+        console.log(energiaGerada) 
 
 
         const qtd = Math.ceil(consumoMedioMensal / energiaGerada);
@@ -115,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const arvores = Math.round((TONco2) * 7.14451202);
 
         const areaInstalacao = Number((qtd * painel.areaInstalacao).toFixed(1));
-
+        const payback = 1
         const resultado = `
             <p>Potencia do sistema: ${potSistema} kWp</p>
             <p>Quantidade de Placas: ${qtd}</p>
@@ -124,12 +123,22 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>Redução de CO2: ${TONco2} TON</p>
             <p>Area de Instalação: ${areaInstalacao} m2</p>
         `;
-        document.getElementById("resultado").style.display = "block";
-        document.getElementById("resultado").innerHTML = resultado; // Exibe os resultados
+        /* document.getElementById("resultado").style.display = "block";
+        document.getElementById("resultado").innerHTML = resultado; */
+
+        localStorage.setItem("potencia", potSistema + " kWp");
+        localStorage.setItem("quantidadePlacas", qtd);
+        localStorage.setItem("payback", payback + " Anos");
+        localStorage.setItem("investimentoMedio", investimentoMedio);
+        localStorage.setItem("reducaoCO2", TONco2 + " Ton");
+        localStorage.setItem("areaInstalacao", areaInstalacao + " m²");
+
+        // Salvar outros dados...
+
+        window.location.href = "resultado.html";
     }
 
     document.getElementById('botao').addEventListener('click', () => {
-        // Chama a função calcular quando o botão é clicado
         calcular();
     });
 });

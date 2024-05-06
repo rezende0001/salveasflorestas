@@ -1,9 +1,13 @@
-/* Fonte Poppins para todo o site */
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Impede rolagem horizontal */
+    overflow-x: hidden;
+}
+
+html, body {
+    width: 100%;
 }
 
 header {
@@ -192,3 +196,4 @@ footer a:hover {
     background-color: rgba(0, 128, 0, 0.05); /* Cor verde claro para o "trilho" com baixa opacidade */
     border-radius: 4px; /* Bordas arredondadas */
 }
+
