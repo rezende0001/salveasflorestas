@@ -73,6 +73,7 @@ nav ul li a:hover {
     text-shadow: 3px 3px 10px #000; /* Sombra para contraste */
 }
 
+
 /* Estilo para o botão no canto inferior direito */
 #inicio .botao-direito {
     position: absolute; /* Posição absoluta para controle preciso */
@@ -106,6 +107,10 @@ nav ul li a:hover {
 /* Efeito para hover (quando o mouse passa por cima) */
 .botao-faca-sua-parte:hover {
     background-color: #45a0493f; /* Cor mais escura ao passar o mouse */
+}
+
+#como-contribuir {
+    margin: 25px;
 }
 
 /* Seções do Site (Limitar Largura, mas sem afetar #inicio) */

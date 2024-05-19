@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="calculadora.js"></script> 
+    <link rel="shortcut icon" href="imgs/shorticon.webp">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -28,33 +29,47 @@
             <p>Esse e o resultado do uso de energias não renovaveis: consequencia irreversiveis para nossos ecossistemas.</p>
             <button class="botao-direito" onclick="window.location.href='#calculadora'">Faça sua parte</button>
         </div>
+
+        <div class="form-calc">
+            <form id="form-calculadora" style="max-width: 400px; margin: auto; text-align: center;">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="localizacao">Cidade (Apenas SP):</label>
+                    <select id="localizacao" name="localizacao" style="width: 80%;">
+                        <option value="">Selecione uma cidade</option>
+                        <option value="Guarulhos">Guarulhos</option>
+                    </select>
+                </div>
+    
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="consumoMedioMensal">Consumo Médio Mensal (kWh):</label>
+                    <input type="number" id="consumoMedioMensal" placeholder="Digite seu consumo médio mensal" style="width: 80%;">
+                </div>
+    
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="custo-kwh">Custo por kWh (R$):</label>
+                    <input type="number" id="custo-kwh" placeholder="Digite o custo por kWh" style="width: 80%;">
+                </div>
+    
+    
+                <button id="botao" type="button">Calcular</button> 
+            </form>
+        </div>
+    </section>
+
+    <section id="como-contribuir" style="text-align: center; padding: 60px; height: 100vh;">
+        <div class="textos">
+            <h1>Como posso contribuir?</h1>
+            <p>A produção de energia através de fontes não renováveis, como o carvão, o petróleo e o gás natural, é uma das principais causas de desmatamento e degradação ambiental em diversos biomas ao redor do mundo. A queima desses combustíveis fósseis não apenas libera grandes quantidades de dióxido de carbono, um dos principais gases de efeito estufa, mas também resulta em uma série de outros impactos negativos, como a poluição do ar e da água e a destruição de habitats naturais.
+
+                Por outro lado, a energia solar representa uma alternativa sustentável e eficiente. Ela é gerada através da conversão da luz solar em eletricidade sem a necessidade de queimar combustíveis fósseis, o que significa que não emite poluentes nem contribui para o aquecimento global. Além disso, a energia solar é considerada uma fonte inesgotável, ao contrário dos combustíveis fósseis que são finitos e estão se esgotando rapidamente.</p>
+            <button class="botao-direito" onclick="window.location.href='#calculadora'">Faça sua parte</button>
+        </div>
     
     </section>
 
     <section id="calculadora" style="text-align: center; padding: 60px;">
         <h2>Calculadora de Energia Solar</h2>
-        <form id="form-calculadora" style="max-width: 400px; margin: auto; text-align: center;">
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label for="localizacao">Cidade (Apenas SP):</label>
-                <select id="localizacao" name="localizacao" style="width: 80%;">
-                    <option value="">Selecione uma cidade</option>
-                    <option value="Guarulhos">Guarulhos</option>
-                </select>
-            </div>
-
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label for="consumoMedioMensal">Consumo Médio Mensal (kWh):</label>
-                <input type="number" id="consumoMedioMensal" placeholder="Digite seu consumo médio mensal" style="width: 80%;">
-            </div>
-
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label for="custo-kwh">Custo por kWh (R$):</label>
-                <input type="number" id="custo-kwh" placeholder="Digite o custo por kWh" style="width: 80%;">
-            </div>
-
-
-            <button id="botao" type="button">Calcular</button> 
-        </form>
+        
     </section>
 
 
@@ -63,6 +78,8 @@
             <h2>Perguntas Frequentes</h2>
             <div class="pergunta-frequente">O que é a Calculadora Solar?</div>
             <div class="resposta">É uma ferramenta online indispensável para quem tem interesse em gerar a sua própria energia solar. Com ela é possível simular em poucos segundos o tamanho e o custo do gerador de energia solar ideal para suprir os gastos de luz de sua residência.</div>
+            <div class="pergunta-frequente">O que a Energia Solar ajuda nos biomas?</div>
+            <div class="resposta">A energia solar contribui para a proteção dos biomas ao reduzir as emissões de CO2, minimizar a poluição, economizar recursos naturais, e diminuir a necessidade de desmatamento para geração de energia. Além disso, ao não depender de água para sua produção, não exerce pressão sobre esse recurso vital, beneficiando ecossistemas especialmente em regiões áridas.</div>
             <div class="pergunta-frequente">Como funciona a Calculadora?</div>
             <div class="resposta">Através das informações referente a localização e o valor da conta de luz a ferramenta realizará cálculos utilizando-se de bancos de dados para simular as principais informações sobre o gerador de energia solar mais adequado a sua demanda de consumo. Desta forma, você vai saber em poucos segundos qual será a potência ideal a ser instalada em kWp, além do valor estimado a ser investido e o retorno desse investimento. Lembrando que a potência do gerador está baseada em uma simulação e por essa razão pode sofrer variações de acordo com a orientação e inclinação dos painéis, local de instalação e radiação para a região informada. Vale também informar que essa simulação não inclui serviços de engenharia e instalação.</div>
             <div class="pergunta-frequente">Vocês recomenda alguma Empresa para obter mais informações?</div>
@@ -73,7 +90,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2024 Salve as Florestas. Todos os direitos reservados.</p>
-            <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
+            <p>Desenvolvido por Lucas Rezende, Rafael Françoso e Marjory Arantes</p>
         </div>
     </footer>
 </body>
@@ -82,6 +99,22 @@
     text-align: center;
     padding: 60px;
 }
+
+.form-calc {
+        max-width: 500px;
+        margin: auto; /* Centraliza o formulário na página */
+        padding: 20px; /* Adiciona espaçamento interno */
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil para dar profundidade */
+        border-radius: 10px; /* Bordas arredondadas */
+    }
+
+    @media (max-width: 768px) {
+        .form-calc {
+            width: 90%; /* Aumenta a largura em dispositivos menores */
+            padding: 15px; /* Ajusta o espaçamento interno */
+        }
+    }
 
 #form-calculadora {
     max-width: 400px;

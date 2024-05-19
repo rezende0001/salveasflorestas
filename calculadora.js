@@ -10,6 +10,7 @@ const paineis = [painel270w, painel330w, painel325w];
 const painel = paineis[1]
 
 document.addEventListener('DOMContentLoaded', () => {
+
     document.querySelectorAll(".pergunta-frequente").forEach(pergunta => {
         pergunta.addEventListener("click", () => {
             let resposta = pergunta.nextElementSibling;
