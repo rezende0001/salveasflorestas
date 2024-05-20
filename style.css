@@ -67,7 +67,7 @@ nav ul li a:hover {
     text-shadow: 4px 4px 12px #000; /* Sombra para contraste */
 }
 
-#inicio p {
+#inicio .subtitulos {
     font-size: 20px; /* Tamanho do texto */
     color: white; /* Cor do texto */
     text-shadow: 3px 3px 10px #000; /* Sombra para contraste */
@@ -118,23 +118,12 @@ section {
     padding: 40px; /* Espaçamento para cada seção */
     text-align: center; /* Centraliza o texto */
     margin: auto; /* Centraliza na página */
+    min-height: 100vh;
 }
 
 #calculadora, #perguntas-frequentes, #energia-da-rua, #energia-solar {
     max-width: 800px; /* Limitar largura apenas para seções que precisam */
     margin: auto; /* Centraliza na página */
-}
-
-
-/* Estilo para a área do resultado da calculadora */
-#resultado {
-    display: none; /* Oculto por padrão */
-    background-color: #4CAF50; /* Fundo verde */
-    border-radius: 15px; /* Cantos arredondados */
-    padding: 20px; /* Espaçamento interno */
-    color: white; /* Texto branco para contraste */
-    text-align: center; /* Centraliza o texto */
-    margin-top: 20px; /* Espaçamento superior */
 }
 
 /* Estilo para perguntas frequentes com efeito de acordeão */
@@ -146,6 +135,10 @@ section {
     cursor: pointer; /* Indica clicável */
     max-width: 800px; /* Limitar a largura para prevenir cortes */
     margin: auto; /* Centraliza na página */
+}
+
+.pergunta-frequente {
+    margin: 10px
 }
 
 .pergunta-frequente::after {
