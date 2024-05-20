@@ -1,11 +1,21 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background: #333;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+.top-texto{
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 .container {
@@ -30,3 +40,9 @@ body {
     margin-top: 5px;
 }
 
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+}
